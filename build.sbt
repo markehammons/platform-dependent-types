@@ -7,7 +7,8 @@ lazy val root = project
   .in(file("."))
   .aggregate(
     naive,
-    `path-dependent-types`
+    `path-dependent-types`,
+    `opaque-types-1`
   )
 
 lazy val naive =
@@ -17,6 +18,12 @@ lazy val naive =
   )
 
 lazy val `path-dependent-types` =
+  project.settings(
+    scalaVersion := scalaV,
+    libraryDependencies += munit
+  )
+
+lazy val `opaque-types-1` =
   project.settings(
     scalaVersion := scalaV,
     libraryDependencies += munit
