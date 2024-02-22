@@ -4,8 +4,12 @@ opaque type CIntegral <: CVal =
   CVal
 
 object CIntegral:
-  def apply(a: Long): CIntegral =
+  def apply[P <: Platform](using
+      p: P,
+      tr: TypeRelation[P, ?]
+  )(a: tr.Real): CIntegral =
     CVal(a)
+
   extension (
       cintegral: CIntegral
   )
