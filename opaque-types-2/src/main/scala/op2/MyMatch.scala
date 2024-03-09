@@ -1,4 +1,4 @@
-package op2 
+package op2
 
 object MyMatches:
   type MyMatch[A] = A match
